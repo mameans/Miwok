@@ -33,7 +33,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingLeft="16dp"
-        android:background="@color/category_numbers">
+        android:background="@color/category_numbers" >
 
         <TextView
             android:id="@+id/miwok_text_view"
@@ -57,10 +57,5 @@
             tools:text="one" />
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/play_image"
-        android:layout_width="@dimen/list_item_height"
-        android:layout_height="@dimen/list_item_height" />
 
 </LinearLayout>

@@ -27,6 +27,9 @@ public class Word {
     /** Miwok translation for the word */
     private String mMiwokTranslation;
 
+    /** Miwok audio for the word */
+    private int mAudioResourceId;
+
     /** Image resource ID for the word */
     private int mImageResourceId = NO_IMAGE_PROVIDED;
 
@@ -40,9 +43,10 @@ public class Word {
      *                           (such as English)
      * @param miwokTranslation is the word in the Miwok language
      */
-    public Word(String defaultTranslation, String miwokTranslation) {
+    Word(String defaultTranslation, String miwokTranslation, int audioResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        mAudioResourceId = audioResourceId;
     }
 
     /**
@@ -54,37 +58,44 @@ public class Word {
      * @param imageResourceId is the drawable resource ID for the image associated with the word
      *
      */
-    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId) {
+    Word(String defaultTranslation, String miwokTranslation, int audioResourceId, int imageResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        mAudioResourceId = audioResourceId;
         mImageResourceId = imageResourceId;
     }
 
     /**
      * Get the default translation of the word.
      */
-    public String getDefaultTranslation() {
+    String getDefaultTranslation() {
         return mDefaultTranslation;
     }
 
     /**
      * Get the Miwok translation of the word.
      */
-    public String getMiwokTranslation() {
+    String getMiwokTranslation() {
         return mMiwokTranslation;
     }
 
     /**
      * Return the image resource ID of the word.
      */
-    public int getImageResourceId() {
+    int getImageResourceId() {
         return mImageResourceId;
     }
 
     /**
      * Returns whether or not there is an image for this word.
      */
-    public boolean hasImage() {
+    boolean hasImage() {
         return mImageResourceId != NO_IMAGE_PROVIDED;
     }
+
+    /**
+     * Returns the audio resource ID of the word.
+     */
+
+    public int getAudioResourceId() { return mAudioResourceId; }
 }
