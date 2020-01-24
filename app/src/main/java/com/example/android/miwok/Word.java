@@ -31,10 +31,10 @@ public class Word {
     private int mAudioResourceId;
 
     /** Image resource ID for the word */
-    private int mImageResourceId = NO_IMAGE_PROVIDED;
+    private int mImageResourceId = NOT_PROVIDED;
 
     /** Constant value that represents no image was provided for this word */
-    private static final int NO_IMAGE_PROVIDED = -1;
+    private static final int NOT_PROVIDED = -1;
 
     /**
      * Create a new Word object.
@@ -90,12 +90,24 @@ public class Word {
      * Returns whether or not there is an image for this word.
      */
     boolean hasImage() {
-        return mImageResourceId != NO_IMAGE_PROVIDED;
+        return mImageResourceId != NOT_PROVIDED;
     }
 
     /**
      * Returns the audio resource ID of the word.
      */
 
-    public int getAudioResourceId() { return mAudioResourceId; }
+    int getAudioResourceId() {
+        return mAudioResourceId;
+    }
+
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mDefaultTranslation='" + mDefaultTranslation + '\'' +
+                ", mMiwokTranslation='" + mMiwokTranslation + '\'' +
+                ", mAudioResourceId=" + mAudioResourceId +
+                ", mImageResourceId=" + mImageResourceId +
+                '}';
+    }
 }
